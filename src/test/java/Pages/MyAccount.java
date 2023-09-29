@@ -41,6 +41,8 @@ public class MyAccount extends BaseTools {
 
         waitAndClick(driver,registerButton);
         System.out.println("I am clicking on Register");
+
+
     }
     public void fillInRegisterEmail(String email){
 

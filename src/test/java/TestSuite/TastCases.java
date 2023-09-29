@@ -3,7 +3,9 @@ package TestSuite;
 
 import Configuration.SetupTeardown;
 import Pages.Home;
+import Pages.MyAccount;
 import Pages.Shop;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TastCases extends SetupTeardown {
@@ -25,6 +27,30 @@ public class TastCases extends SetupTeardown {
 
         shop.clickRemoveProductButton();
 
+    }
 
+    @Test
+    public void signin(){
+        Home home = new Home(driver);
+        home.clickMyAccount();
+        MyAccount myAccount = new MyAccount(driver);
+        myAccount.fillInLoginUserName("mzili.elmehdi");
+        myAccount.fillInLoginPassword("Hola123456?");
+        myAccount.clickLogin();
+    }
+
+    @Test
+    public void Login(){
+        Home homePage = new Home(driver);
+        homePage.clickMyAccount();
+        MyAccount myAccountPage = new MyAccount(driver);
+        String email="hajartaouilKnKnjfW@gmail.com";
+        String password="Test1234567890!";
+        myAccountPage.fillInRegisterEmail(email);
+        myAccountPage.fillInRegisterPassword(password);
+        myAccountPage.clickRegister();
+        Assert.assertTrue(myAccountPage.verifyMessageIsDisplayed());
+        System.out.println(myAccountPage.verifyMessageIsDisplayed());
+        System.out.println("finished");
     }
 }

@@ -27,14 +27,11 @@ public class Home extends BaseTools {
 
         this.driver=driver;
         PageFactory.initElements(driver,this);
-
     };
 
     public void clickStartShopping() throws InterruptedException {
 
         waitAndClick(driver,startShopping);
-
-
     }
 
     public void closeAddPopup(){
@@ -53,10 +50,8 @@ public class Home extends BaseTools {
     public void clickShopButton(){
 
         waitAndClick(driver,shopButton);
-
+    }
     public void clickMyAccount(){
         waitAndClick(driver,buttonMyAccount);
     }
-
-
 }

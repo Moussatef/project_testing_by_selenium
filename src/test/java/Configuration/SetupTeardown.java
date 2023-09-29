@@ -15,7 +15,7 @@ public class SetupTeardown {
         System.out.println("lunch browser");
         driver= new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get("https://weathershopper.pythonanywhere.com/");
+        driver.get("https://practice.automationtesting.in/");
         //Assert.assertTrue(driver.findElement(By.xpath("//h2[text()=\"Current temperature\"]")));
     }
 

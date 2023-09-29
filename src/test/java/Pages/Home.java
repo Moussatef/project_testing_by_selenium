@@ -8,28 +8,26 @@ import utilise.BaseTools;
 
 
 public class Home extends BaseTools {
-    //By buyMoisturizersButton = By.xpath("//a[@href='/moisturizer']");
+    @FindBy(xpath = "//a[contains(text(),'My Account')]" )
+    WebElement buttonMyAccount;
     @FindBy(xpath = "//a[@href='/sunscreen']" )
     WebElement buySunscreensButton;
     @FindBy(xpath = "//h2[text()='Current temperature']" )
     WebElement titleTemperature;
-
-
     WebDriver driver;
     public Home(WebDriver driver){
-
         this.driver=driver;
         PageFactory.initElements(driver,this);
-
     };
 
     public void clickBuySunscreens(){
-
         //driver.findElement(buySunscreensButton);
         //waitElementToBeVisible(driver,titleTemperature);
         waitAndClick(driver,buySunscreensButton);
+    }
 
-
+    public void clickMyAccount(){
+        waitAndClick(driver,buttonMyAccount);
     }
 
 

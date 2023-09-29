@@ -2,9 +2,7 @@
 package TestSuite;
 
 import Configuration.SetupTeardown;
-import Pages.Cart;
 import Pages.Home;
-import Pages.Sunscreens;
 import org.testng.annotations.Test;
 
 public class TastCases extends SetupTeardown {
@@ -12,7 +10,7 @@ public class TastCases extends SetupTeardown {
 
 
     @Test
-    public void BuySunscreen() throws InterruptedException {
+    public void userStory2() throws InterruptedException {
         Home home = new Home(driver);
         String emailtest ="test@gmail.com";
         String cardnumberTest="4242424242424242";
@@ -20,9 +18,9 @@ public class TastCases extends SetupTeardown {
         String codetest = "199";
         String productname="Gary Bio Sandalwood SPF-50";
         //Assert.assertTrue(home.verifyTitleMoisturizers());
-        home.clickBuySunscreens();
+        home.clickMyAccount();
 
-        Sunscreens sunscreen = new Sunscreens(driver);
+       /* Sunscreens sunscreen = new Sunscreens(driver);
         String productName = sunscreen.getItemName(productname);
         String productPrice = sunscreen.getPrice(productname);
         System.out.println(productName);
@@ -39,7 +37,7 @@ public class TastCases extends SetupTeardown {
         //cart.remplirformulaire("", "4242","","199");
         //cart.JSExecuter("test@gmail.com", "4242 4242 4242 4242","4242","199");
         cart.ClickPassToPayment();
-        wait(2000);
+        wait(2000);*/
 
 
     }

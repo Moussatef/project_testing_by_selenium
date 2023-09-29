@@ -11,10 +11,7 @@ import utilise.BaseTools;
 public class Home extends BaseTools {
     @FindBy(xpath = "//a[contains(text(),'My Account')]" )
     WebElement buttonMyAccount;
-    @FindBy(xpath = "//a[@href='/sunscreen']" )
-    WebElement buySunscreensButton;
-    @FindBy(xpath = "//h2[text()='Current temperature']" )
-    WebElement titleTemperature;
+
     @FindBy(xpath = "//li[@id='wpmenucartli']/a" )
     WebElement startShopping;
 
@@ -36,8 +33,8 @@ public class Home extends BaseTools {
 
     public void closeAddPopup(){
         try {
+            driver.switchTo().frame(0);
             WebElement closeButton = driver.findElement(By.id("dismiss-button"));
-            waitAndClick(this.driver,closeButton);
             if (closeButton.isDisplayed()) {
                 waitAndClick(this.driver,closeButton);
             }
@@ -48,7 +45,6 @@ public class Home extends BaseTools {
     }
 
     public void clickShopButton(){
-
         waitAndClick(driver,shopButton);
     }
     public void clickMyAccount(){

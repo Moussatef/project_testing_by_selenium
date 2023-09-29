@@ -34,8 +34,10 @@ public class TastCases extends SetupTeardown {
         Home home = new Home(driver);
         home.clickMyAccount();
         MyAccount myAccount = new MyAccount(driver);
-        myAccount.fillInLoginUserName("mzili.elmehdi");
-        myAccount.fillInLoginPassword("Hola123456?");
+        String username="mzili.elmehdi";
+        String password="Hola123456?";
+        myAccount.fillInLoginUserName(username);
+        myAccount.fillInLoginPassword(password);
         myAccount.clickLogin();
     }
 

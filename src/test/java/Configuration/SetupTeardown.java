@@ -20,7 +20,7 @@ public class SetupTeardown {
 
 
         ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("C:\\Users\\omoussat\\Desktop\\Formation_Test\\ProjectForTest\\by_selenium\\file\\Free-Ad-Blocker.crx"));
+        options.addExtensions(new File("C:\\Formation\\Git02102023\\project_testing_by_selenium\\file\\Free-Ad-Blocker.crx"));
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         //WebDriverManager.chromedriver().setup();

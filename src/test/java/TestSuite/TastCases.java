@@ -25,6 +25,8 @@ public class TastCases extends SetupTeardown {
 
         home.clickStartShopping();
 
+        //User Story 4
+
         shop.clickRemoveProductButton();
 
     }
@@ -46,7 +48,7 @@ public class TastCases extends SetupTeardown {
         Home homePage = new Home(driver);
         homePage.clickMyAccount();
         MyAccount myAccountPage = new MyAccount(driver);
-        String email="hajartaouilKnKnjfW@gmail.com";
+        String email="hajartaouilKnKnjnfW@gmail.com";
         String password="Test1234567890!";
         myAccountPage.fillInRegisterEmail(email);
         myAccountPage.fillInRegisterPassword(password);

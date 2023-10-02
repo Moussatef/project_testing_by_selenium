@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,19 +28,6 @@ public class Home extends BaseTools {
     public void clickStartShopping() throws InterruptedException {
 
         waitAndClick(driver,startShopping);
-    }
-
-    public void closeAddPopup(){
-        try {
-            driver.switchTo().frame(0);
-            WebElement closeButton = driver.findElement(By.id("dismiss-button"));
-            if (closeButton.isDisplayed()) {
-                waitAndClick(this.driver,closeButton);
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            // The pop-up ad element was not found or is not displayed, continue testing.
-            System.out.println("add not found!!");
-        }
     }
 
     public void clickShopButton(){

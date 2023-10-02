@@ -1,6 +1,5 @@
 package Pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,17 +25,11 @@ public class Shop extends BaseTools {
     }
 
     public void clickAddToBasketButton() throws InterruptedException {
-
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        // Scroll down by pixel
-        js.executeScript("window.scrollBy(0, 800);"); // Scroll down by 500 pixels vertically
         waitAndClick(this.driver,addButton);
-
-
+        Thread.sleep(1000);
     }
 
     public void clickRemoveProductButton(){
-        System.out.println("sys");
         waitAndClick(this.driver,removeProduct);
     }
 

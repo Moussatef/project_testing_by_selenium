@@ -31,19 +31,6 @@ public class Home extends BaseTools {
         waitAndClick(driver,startShopping);
     }
 
-    public void closeAddPopup(){
-        try {
-            driver.switchTo().frame(0);
-            WebElement closeButton = driver.findElement(By.id("dismiss-button"));
-            if (closeButton.isDisplayed()) {
-                waitAndClick(this.driver,closeButton);
-            }
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            // The pop-up ad element was not found or is not displayed, continue testing.
-            System.out.println("add not found!!");
-        }
-    }
-
     public void clickShopButton(){
         waitAndClick(driver,shopButton);
     }

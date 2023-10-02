@@ -14,12 +14,12 @@ public class TastCases extends SetupTeardown {
     public void addProductToBuy() throws InterruptedException {
         Home home = new Home(driver);
 
-        home.closeAddPopup();
         home.clickShopButton();
 
         Shop shop = new Shop(driver);
 
         shop.clickAddToBasketButton();
+
 
         home.clickStartShopping();
 

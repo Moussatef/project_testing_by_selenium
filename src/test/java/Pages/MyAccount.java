@@ -38,12 +38,10 @@ public class MyAccount extends BaseTools {
 
 
     public void clickRegister(){
-
         waitAndClick(driver,registerButton);
         System.out.println("I am clicking on Register");
-
-
     }
+
     public void fillInRegisterEmail(String email){
 
         waitAndSendkeys(driver,fieldRegisterEmail, email);

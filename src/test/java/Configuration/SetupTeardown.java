@@ -3,6 +3,7 @@ package Configuration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -16,18 +17,26 @@ public class SetupTeardown {
 
     @BeforeMethod
     public void LunchBrowser(){
+
+        ConfigReader configReader = new ConfigReader();
+        configReader.loadProperties();
+
         System.out.println("lunch browser");
+        if(configReader.getBrowser().equals("chrome")){
+            ChromeOptions options = new ChromeOptions();
+            // to block adds
+            options.addExtensions(new File("C:\\Formation\\Git02102023\\project_testing_by_selenium\\file\\Free-Ad-Blocker.crx"));
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+            driver = new ChromeDriver(capabilities);
+        } else if (configReader.getBrowser().equals("edge")) {
+
+            driver= new EdgeDriver();
+        }
 
 
-        ChromeOptions options = new ChromeOptions();
-        options.addExtensions(new File("C:\\Users\\omoussat\\Desktop\\Formation_Test\\ProjectForTest\\by_selenium\\file\\Free-Ad-Blocker.crx"));
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        //WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(capabilities);
         driver.manage().window().maximize();
-        driver.get("https://practice.automationtesting.in/");
-        //Assert.assertTrue(driver.findElement(By.xpath("//h2[text()=\"Current temperature\"]")));
+        driver.get(configReader.getUrl());
 
 
     }

@@ -15,8 +15,8 @@ public class TastCases extends SetupTeardown {
         Home homePage = new Home(driver);
         homePage.clickMyAccount();
         MyAccount myAccount = new MyAccount(driver);
-        String email="hajartaouilKKf@gmail.com";
-        String password="Test1234567890!@Capgemini";
+        String email="ainfatimaezzahra1998@gmail.com";
+        String password="Aou1998rir!@Capgemini";
         myAccount.fillInRegisterEmail(email);
         myAccount.fillInRegisterPassword(password);
         myAccount.clickRegister();

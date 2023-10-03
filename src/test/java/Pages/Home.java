@@ -25,7 +25,7 @@ public class Home extends BaseTools {
         PageFactory.initElements(driver,this);
     };
 
-    public void clickStartShopping() throws InterruptedException {
+    public void clickStartShopping() {
 
         waitAndClick(driver,startShopping);
     }

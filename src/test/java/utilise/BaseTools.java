@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BaseTools {
     public WebDriver driver;
     WebDriverWait wait;
-    private WebDriver driver1;
     int TIME = 30;
     public void waitAndClick(WebDriver driver, WebElement element){
         wait = new WebDriverWait(driver,TIME);

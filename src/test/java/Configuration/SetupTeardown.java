@@ -36,7 +36,7 @@ public class SetupTeardown {
 
 
         driver.manage().window().maximize();
-        driver.get("https://practice.automationtesting.in/");
+        driver.get(configReader.getUrl());
 
 
     }

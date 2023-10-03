@@ -11,21 +11,21 @@ import org.testng.annotations.Test;
 public class TastCases extends SetupTeardown {
 
     @Test
-    public void Login(){
+    public void Register(){
         Home homePage = new Home(driver);
         homePage.clickMyAccount();
-        MyAccount myAccountPage = new MyAccount(driver);
-        String email="hajartaouilKnKfW@gmail.com";
-        String password="Test1234567890!";
-        myAccountPage.fillInRegisterEmail(email);
-        myAccountPage.fillInRegisterPassword(password);
-        myAccountPage.clickRegister();
-        Assert.assertTrue(myAccountPage.verifyMessageIsDisplayed());
-        System.out.println(myAccountPage.verifyMessageIsDisplayed());
+        MyAccount myAccount = new MyAccount(driver);
+        String email="hajartaouilKKf@gmail.com";
+        String password="Test1234567890!@Capgemini";
+        myAccount.fillInRegisterEmail(email);
+        myAccount.fillInRegisterPassword(password);
+        myAccount.clickRegister();
+        Assert.assertTrue(myAccount.verifyMessageIsDisplayed());
+        System.out.println(myAccount.verifyMessageIsDisplayed());
         System.out.println("finished");
     }
     @Test
-    public void signin(){
+    public void Login(){
         Home home = new Home(driver);
         home.clickMyAccount();
         MyAccount myAccount = new MyAccount(driver);
